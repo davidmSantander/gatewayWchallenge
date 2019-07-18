@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+      - id: addrequestparameter_route
+        uri: https://jsonplaceholder.typicode.com/users
+        predicates:
+        - Path=/users/**
+      - id: path_route
+        uri: https://jsonplaceholder.typicode.com/photos
+        predicates:
+        - Path=/photos/**
+      - id: path_route
+        uri:  https://jsonplaceholder.typicode.com/albums
+        predicates:
+        - Query=userId, \w
+      - id: path_route
+        uri:  https://jsonplaceholder.typicode.com/albums
+        predicates:
+        - Path=/albums/**
+      - id: path_route
+        uri: https://jsonplaceholder.typicode.com/comments
+        predicates:
+        - Path=/comments/**
+      - id: path_route
+        uri: https://jsonplaceholder.typicode.com/comments
+        predicates:
+        - Query=name, \w
+      - id: path_route
+        uri: https://localhost:8081/permisos
+        predicates:
+        - Path=/permisos/**
+       
+server:
+  port: 9090

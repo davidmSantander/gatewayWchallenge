@@ -1,0 +1,29 @@
+/app
+# Eclipse
+.classpath
+.project
+.settings/
+
+# IntelliJ
+.idea/
+*.iml
+/app
+nb-configuration.xml
+nbactions-repos.xml
+*.iws
+*.ipr
+
+# Mac
+.DS_Store
+
+# Maven
+log/
+target/
+
+# Sonar local
+.sonar/
+/.springBeans
+*.log
+/bin/
+/*.ipr
+*.war
